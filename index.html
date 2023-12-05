@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armiyan Travel</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Aramiyan</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="about.html">About</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="video/1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video/2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video/3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video/4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video/5.mp4" autoplay muted loop></video>
+       <div class="content active">
+        <h1>Labuan.<br /><span>Bajo</span></h1>
+        <p>
+          Mengunjungi Labuan Bajo, tentu saja tak terpisah dari Pulau Komodo yang menyimpan keindahan alam yang magis dan hewan purba yang mendunia. Komodo (Varanus komodoensis) merupakan...
+        </p>
+        <a href="labuanbajo.html">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Kawah.<br /><span>Ijen</span></h1>
+        <p>
+          Keindahan Kawah ijen dengan fenomena alam yang mendunia tidak terbantahkan. Api Biru menjadi salah satu daya tarik utama dari Kawah ijen, saat selimut malam tiba memunculkan pijar api biru dari dasar kawah Ijen. Fenomena alam yang diakibatkan oleh...
+        </p>
+        <a href="kawahijen.html">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Danau.<br /><span>Toba</span></h1>
+        <p>
+          Danau Toba adalah sebuah keajaiban alam yang sangat menakjubkan. Danau ini diperkirakan terbentuk dari letusan dahsyat sebuah gunung api, Gunung Toba, yang terjadi sekitar 74.000 tahun yang lalu. Dengan luas lebih dari 1.145 kilometer persegi dan...
+        </p>
+        <a href="danautoba.html">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Tomohon</h1>
+        <p>
+          Tomohon memiliki topografi pegunungan dan perbukitan, yang membentang dari utara hingga selatan. Terdapat empat gunung berapi di Tomohon, dua diantaranya merupakan gunung berapi yang masih aktif, yaitu...
+        </p>
+        <a href="tomohon.html">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Bintan</h1>
+        <p>
+          Bintan merupakan destinasi andalan di Kepulauan Riau. Destinasi ini terkenal akan deretan resor mewahnya, lapangan golf kelas dunia, dan tak ketinggalan, keindahan pesisir pantainya yang menakjubkan. Nah, bagi  Sobat Pesona yang ingin merasakan sensasi petualangan sekaligus...
+        </p>
+        <a href="bintan.html">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"> <i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/veryan.a_/?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"> <i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/21394varian?t=maQ9mX8pbHMVdvj6wtQiiw&s=09"> <i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+          <div class="nav-btn active"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      //Javascript of responsive navigation menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      //Javascript buat navigasi video slide
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function(manual){
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+
+    </script>
+  </body>
+</html>

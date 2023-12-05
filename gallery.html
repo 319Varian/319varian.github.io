@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="src/style.css" />
+</head>
+<header>
+    <a style="color: #2696e9;" href="index.html" class="brand">Aramiyan</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a style="color: black;" href="index.html">Home</a>
+        <a style="color: black;" href="about.html">About</a>
+        <a style="color: black;" href="gallery.html">Gallery</a>
+        <a style="color: black;" href="contact.html">Contact</a>
+      </div>
+    </div>
+</header>
+<body >
+    
+    <section class="gallery">
+        <!-- Card 1 -->
+        <div class="gallery-card">
+          <a href="bintan.html">
+          <img src="image/bintan.jpg" alt="Gallery Image 1"/>
+          <div class="gallery-card-content">
+            <h3>Bintan</h3>
+            <p>Bintan merupakan destinasi andalan di Kepulauan Riau.</p>
+          </div></a>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="gallery-card">
+          <a href="kawahijen.html">
+          <img src="image/kawahijen.jpg" alt="Gallery Image 2" />
+          <div class="gallery-card-content">
+            <h3>Kawah Ijen</h3>
+            <p>Keindahan Kawah ijen dengan fenomena alam yang mendunia tidak terbantahkan.</p>
+          </div></a>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="gallery-card">
+          <a href="tomohon.html">
+            <img src="image/tomohon.jpg" alt="Gallery Image 3" />
+            <div class="gallery-card-content">
+              <h3>Tomohon</h3>
+              <p>Tomohon memiliki topografi pegunungan dan perbukitan, yang membentang dari utara hingga selatan.</p>
+            </div></a>
+          </div>
+
+          <!-- Card 4 -->
+        <div class="gallery-card">
+          <a href="danautoba.html">
+            <img src="image/toba.jpg" alt="Gallery Image 4" />
+            <div class="gallery-card-content">
+              <h3>Danau Toba</h3>
+              <p>Danau Toba adalah sebuah keajaiban alam yang sangat menakjubkan.</p>
+            </div></a>
+          </div>
+  
+
+          <!-- Card 5 -->
+        <div class="gallery-card">
+          <a href="labuanbajo.html">
+            <img src="image/tamankomodo.jpg" alt="Gallery Image 5" />
+            <div class="gallery-card-content">
+              <h3>Labuan Bajo</h3>
+              <p>Mengunjungi Labuan Bajo, tentu saja tak terpisah dari Pulau Komodo yang menyimpan keindahan alam yang magis dan hewan purba yang mendunia.</p>
+            </div></a>
+          </div>
+      </section>
+      <script type="text/javascript">
+        //Javascript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+  
+        menuBtn.addEventListener("click", () => {
+          menuBtn.classList.toggle("active");
+          navigation.classList.toggle("active");
+        });
+  
+        //Javascript buat navigasi video slide
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+  
+        var sliderNav = function(manual){
+          btns.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+  
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+  
+          contents.forEach((content) => {
+            content.classList.remove("active");
+          });
+  
+          btns[manual].classList.add("active");
+          slides[manual].classList.add("active");
+          contents[manual].classList.add("active");
+        }
+  
+        btns.forEach((btn, i) => {
+          btn.addEventListener("click", () => {
+            sliderNav(i);
+          });
+        });
+  
+      </script>
+</body>
+</html>
